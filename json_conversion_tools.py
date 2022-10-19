@@ -11,7 +11,7 @@ def save_dataframe_as_json(data, file, **context):
 
 def load_json_as_json(file, **context):
     object = json.load(file, **context)
-    if type(object) == dict:
+    if type(object) in [dict, list]:
         return object
     return json.loads(object, **context)
 
